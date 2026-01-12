@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "veneer-example-mod",
+	"version": "${version}",
+	"name": "Veneer Example Mod",
+	"description": "This is an example mod for the Veneer ui framework!",
+	"authors": [
+		"Greenman999"
+	],
+	"contact": {
+		"homepage": "https://github.com/Greenman999/Veneer",
+		"sources": "https://github.com/Greenman999/Veneer"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/veneer-example-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"de.greenman999.veneerexamplemod.VeneerExampleMod"
+		]
+	},
+	"mixins": [
+		{
+			"config": "veneer-example-mod.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"layr": "*",
+		"veneer": "*"
+	}
+}

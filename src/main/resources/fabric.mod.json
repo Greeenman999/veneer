@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "veneer",
+  "version": "1.0-SNAPSHOT",
+  "name": "Veneer",
+  "environment": "*",
+  "depends": {
+    "layr": "*"
+  }
+}
