@@ -26,13 +26,6 @@ loom {
         programArgs("--username=Dev")
         configName = "Fabric Client"
     }
-    runs.named("server") {
-        server()
-        ideConfigGenerated(true)
-        runDir = "run/"
-        environment = "server"
-        configName = "Fabric Server"
-    }
 }
 
 dependencies {
