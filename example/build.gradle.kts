@@ -14,6 +14,7 @@ base {
 repositories {
     mavenLocal()
     mavenCentral()
+    maven("https://maven.terraformersmc.com/")
 }
 
 loom {
@@ -44,6 +45,7 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
 
+    modImplementation("com.terraformersmc:modmenu:${property("modmenu_version")}")
 
     implementation("de.greenman999:layr-api:1.0-SNAPSHOT") { isChanging = true }
     modImplementation("de.greenman999:layr:0.1.0-alpha.1+1.21.11-fabric") { isChanging = true }

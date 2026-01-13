@@ -17,7 +17,8 @@
 	"entrypoints": {
 		"client": [
 			"de.greenman999.veneerexamplemod.VeneerExampleMod"
-		]
+		],
+		"modmenu": [ "de.greenman999.veneerexamplemod.compat.ModMenuApiImpl" ]
 	},
 	"mixins": [
 		{
