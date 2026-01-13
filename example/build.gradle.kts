@@ -81,3 +81,7 @@ tasks.jar {
         rename { "${it}_${project.base.archivesName.orNull ?: project.name}" }
     }
 }
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+}
