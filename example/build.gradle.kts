@@ -76,5 +76,5 @@ tasks.jar {
 }
 
 configurations.all {
-    resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+    resolutionStrategy.cacheChangingModulesFor(0, "minutes")
 }
