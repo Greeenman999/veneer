@@ -7,6 +7,7 @@ import org.appliedenergistics.yoga.*;
 import org.appliedenergistics.yoga.config.MutableYogaConfig;
 import org.appliedenergistics.yoga.config.YogaConfig;
 import org.appliedenergistics.yoga.config.YogaLogger;
+import org.joml.Vector4f;
 
 import java.awt.*;
 import java.util.function.Consumer;
@@ -31,6 +32,13 @@ public class Test {
         first.setMargin(YogaEdge.ALL, 10);
         root.addChildAt(first, 0);
 
+        YogaNode child1 = new YogaNode(config);
+        child1.setContext("child");
+        child1.setWidthAuto();
+        child1.setHeightAuto();
+        child1.setMargin(YogaEdge.ALL, 5);
+        first.addChildAt(child1, 0);
+
         YogaNode second = new YogaNode(config);
         second.setContext("second");
         //second.setDisplay(YogaDisplay.FLEX);
@@ -42,11 +50,6 @@ public class Test {
         second.setJustifyContent(YogaJustify.SPACE_BETWEEN);
         second.setAlignItems(YogaAlign.CENTER);
         root.addChildAt(second, 1);
-
-/*        YogaNode secondBackground = new YogaNode(config);
-        secondBackground.setWidthPercent(1.0f);
-        secondBackground.setHeightPercent(1.0f);
-        second.addChildAt(secondBackground,0);*/
 
         for (int i = 0; i < 5; i++) {
             YogaNode blue = new YogaNode(config);
@@ -68,18 +71,25 @@ public class Test {
         LayrProvider.get().getScreenManager().open(new LayrScreen() {
             @Override
             public void renderContent(RenderContext ctx, int mouseX, int mouseY, float delta) {
-                traverse(root, child -> {
+                /*traverse(root, child -> {
                     if (child == root) return;
                     int x = (int) (child.getLayoutX() + child.getOwner().getLayoutX());
                     int y = (int) child.getLayoutY() + (int) child.getOwner().getLayoutY();
                     int width = (int) child.getLayoutWidth();
                     int height = (int) child.getLayoutHeight();
-                    if (width == 10) {
-                        ctx.fillRect(x, y, width, height, Color.BLUE);
+                    if (width == 90) {
+                        ctx.fillRoundedRect(x, y, width, height, 10, Color.RED);
+                    } else if (width == 10){
+                        ctx.fillRoundedRect(x, y, width, height, 2, Color.BLUE);
                     } else {
-                        ctx.fillRect(x, y, width, height, Color.GREEN);
+                        ctx.fillRoundedRect(x, y, width, height, 5, Color.GREEN);
                     }
-                });
+                });*/
+
+                ctx.fillRoundedRect(10, 10, 100, 100, new Vector4f(5, 7, 9, 11), Color.GREEN);
+                ctx.fillRoundedRect(12, 12, 96, 96, new Vector4f(3, 5, 7, 9), Color.BLUE);
+                //ctx.fillRect(100, 100, 200, 200, Color.RED);
+                //ctx.fillRoundedRect(10, 10, 100, 100, 50, new Color(255, 0, 0, 128));
                 /*for (YogaNode child : root.getChildren()) {
                     int x = (int) child.getLayoutX();
                     int y = (int) child.getLayoutY();
