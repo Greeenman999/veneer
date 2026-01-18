@@ -14,6 +14,7 @@ dependencies {
     compileOnly("de.greenman999:layr-api:1.0-SNAPSHOT") { isChanging = true }
 
     implementation("org.appliedenergistics.yoga:yoga:1.0.0")
+    implementation("org.joml:joml:1.10.8")
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
